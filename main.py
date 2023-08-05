@@ -15,13 +15,13 @@ def main():
         random.shuffle(keys)
 
     if MODE == 'minter':
-        logger.info('Запущен минтер HFWC1...')
+        logger.info('Запущен минтер HOLO-NFT...')
         for key in keys:
             mint_ = Minter(key, chain, count, delay, minter_mode)
             res = mint_.mint()
             wallets.append(res[0]), results.append(res[1])
     if MODE == 'bridger':
-        logger.info('Запущен бриджер HFWC1...')
+        logger.info('Запущен бриджер HOLO-NFT...')
         for key in keys:
             bridge_ = Bridger(key, chain, to_chain, delay, moralis_api, bridger_mode)
             res = bridge_.bridge()
